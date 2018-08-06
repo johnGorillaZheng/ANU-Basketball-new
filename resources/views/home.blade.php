@@ -19,23 +19,23 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body">
-                                    <form action="" method="post">
+                                <form action="/competitions" method="post" id="add_comp_form">
+                                    <div class="modal-body">
                                         @csrf
                                         <div class="form-group">
                                             <label for="competitionName">Competition Name:</label>
-                                            <input type="text" class="form-control" id="competitionName" placeholder="new competition">
+                                            <input type="text" class="form-control" name="competitionName" id="competitionName" placeholder="new competition">
                                         </div>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="competitionIcon">
                                             <label class="custom-file-label" for="competitionIcon">Choose your icon</label>
                                         </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn btn-primary">Add now</button>
-                                </div>
+                                     </div>
+                                     <div class="modal-footer">
+                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <input type="submit"   class="btn btn-primary" value="submit">
+                                     </div>
+                                </form>
                             </div>
                         </div>
                       </div>
