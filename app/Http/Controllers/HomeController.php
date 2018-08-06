@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Competition as Competition;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $current_user_id = Auth::user()->id;
+        $competitions = Competition::where('establisher', $current_user_id)->get();
+        return view('home', compact('competitions'));
     }
 }
